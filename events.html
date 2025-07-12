@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events - Event Locator</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="./css/style.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Event Locator</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="events.html">All Events</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container my-5">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h1>Upcoming Events</h1>
+            <div class="d-flex">
+                <select class="form-select me-2" id="sortEvents">
+                    <option value="date-asc">Date (Oldest First)</option>
+                    <option value="date-desc">Date (Newest First)</option>
+                    <option value="name-asc">Name (A-Z)</option>
+                    <option value="name-desc">Name (Z-A)</option>
+                </select>
+                <button class="btn btn-outline-primary" id="filterBtn">Filters</button>
+            </div>
+        </div>
+
+        <div class="card mb-4 d-none" id="filterPanel">
+            <div class="card-body">
+                <form id="eventFilters">
+                    <div class="row">
+                        <div class="col-md-4 mb-3">
+                            <label for="filterDate" class="form-label">Date Range</label>
+                            <input type="date" class="form-control" id="filterDate">
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label for="filterCategory" class="form-label">Category</label>
+                            <select class="form-select" id="filterCategory">
+                                <option value="all">All Categories</option>
+                                <option value="music">Music</option>
+                                <option value="sports">Sports</option>
+                                <option value="arts">Arts & Theater</option>
+                                <option value="food">Food & Drink</option>
+                                <option value="business">Business</option>
+                                <option value="education">Education</option>
+                            </select>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label for="filterLocation" class="form-label">Location</label>
+                            <input type="text" class="form-control" id="filterLocation" placeholder="City or venue">
+                        </div>
+                    </div>
+                    <div class="text-end">
+                        <button type="button" class="btn btn-secondary me-2" id="resetFilters">Reset</button>
+                        <button type="submit" class="btn btn-primary">Apply Filters</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="row" id="eventsContainer">
+            <!-- Events will be loaded here by JavaScript -->
+        </div>
+
+        <nav aria-label="Page navigation" class="mt-4">
+            <ul class="pagination justify-content-center" id="pagination">
+                <!-- Pagination will be loaded here by JavaScript -->
+            </ul>
+        </nav>
+    </main>
+
+    <footer class="bg-dark text-white py-4 mt-5">
+        <div class="container text-center">
+            <p>&copy; 2023 Event Locator. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
